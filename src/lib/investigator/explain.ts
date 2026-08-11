@@ -60,8 +60,11 @@ function supportSection(account: Account): InvestigatorSection {
     findings.push("No open support tickets.");
   } else {
     findings.push(
-      `${current.ticketsOpenedRecently} ticket${current.ticketsOpenedRecently === 1 ? " was" : "s were"} opened this month, including ${current.severeOpenTickets} high-severity unresolved issue${current.severeOpenTickets === 1 ? "" : "s"}.`
+      `${current.openTickets} ticket${current.openTickets === 1 ? " is" : "s are"} currently open, ${current.severeOpenTickets} of them high-severity.`
     );
+    if (current.ticketsOpenedRecently > 0) {
+      findings.push(`${current.ticketsOpenedRecently} ticket${current.ticketsOpenedRecently === 1 ? " was" : "s were"} opened this month.`);
+    }
   }
   if (current.recentEscalation) findings.push("A ticket was recently escalated.");
   if (current.avgResolutionHours !== null) {

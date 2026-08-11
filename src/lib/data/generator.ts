@@ -184,6 +184,9 @@ function buildSnapshot(
       break;
   }
 
+  // Severe tickets are a subset of open tickets by definition.
+  severeOpenTickets = Math.min(severeOpenTickets, openTickets);
+
   // For the "past" snapshot, soften the deviation slightly so risky
   // accounts show visible deterioration over the trailing 30 days rather
   // than having always been exactly this bad.
@@ -192,7 +195,7 @@ function buildSnapshot(
     trend = trend + float(rng, 4, 14);
     adoptionRate = clamp(adoptionRate + float(rng, 0.02, 0.1), 0.05, 1);
     openTickets = Math.max(0, openTickets - int(rng, 0, 2));
-    severeOpenTickets = Math.max(0, severeOpenTickets - int(rng, 0, 1));
+    severeOpenTickets = Math.min(Math.max(0, severeOpenTickets - int(rng, 0, 1)), openTickets);
     if (nps !== null) nps = clamp(nps + int(rng, 3, 12), -100, 100);
     lastActiveDaysAgo = Math.max(0, lastActiveDaysAgo - int(rng, 0, 4));
   }
