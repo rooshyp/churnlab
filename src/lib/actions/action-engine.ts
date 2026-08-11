@@ -1,4 +1,5 @@
 import { Account, DriverContribution, HealthResult, PriorityResult } from "../data/types";
+import { MEANINGFUL_DRIVER_THRESHOLD } from "../scoring/health-score";
 
 export type Urgency = "Now" | "This week" | "This month" | "Monitor";
 
@@ -54,7 +55,7 @@ export function buildRecommendations(account: Account, health: HealthResult, pri
   const seenActions = new Set<string>();
   const urgency = urgencyForTier(priority.tier);
 
-  const meaningfulDrivers = health.drivers.filter((d: DriverContribution) => d.deduction >= 4).slice(0, 3);
+  const meaningfulDrivers = health.drivers.filter((d: DriverContribution) => d.deduction >= MEANINGFUL_DRIVER_THRESHOLD).slice(0, 3);
   for (const driver of meaningfulDrivers) {
     const playbook = ACTION_PLAYBOOK[driver.key];
     if (!playbook || seenActions.has(playbook.action)) continue;

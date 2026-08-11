@@ -18,6 +18,14 @@ export const HEALTH_WEIGHTS = {
 
 export const RISK_THRESHOLDS = { high: 40, medium: 70 } as const;
 
+/**
+ * Minimum deduction for a driver to be treated as "material" by the
+ * investigator narrative and the action engine. Below this, a signal is
+ * present but too small to name as a cause of risk. Shared so the two
+ * never disagree about what counts as a real driver.
+ */
+export const MEANINGFUL_DRIVER_THRESHOLD = 4;
+
 function clamp01(v: number): number {
   return Math.min(1, Math.max(0, v));
 }

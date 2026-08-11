@@ -1,5 +1,6 @@
 import { Account, HealthResult } from "../data/types";
 import { daysUntil } from "../metrics/saas-metrics";
+import { MEANINGFUL_DRIVER_THRESHOLD } from "../scoring/health-score";
 
 export type SectionSeverity = "none" | "watch" | "risk";
 
@@ -117,10 +118,11 @@ function billingSection(account: Account): InvestigatorSection {
 
 function buildSummary(account: Account, health: HealthResult): string {
   const days = daysUntil(account.renewalDate);
-  if (health.drivers.length === 0) {
+  const meaningfulDrivers = health.drivers.filter((d) => d.deduction >= MEANINGFUL_DRIVER_THRESHOLD);
+  if (meaningfulDrivers.length === 0) {
     return `${account.company} shows no material risk drivers; account health is strong across engagement, support, and sentiment signals.`;
   }
-  const top = health.drivers.slice(0, 2).map((d) => DRIVER_SUMMARY_PHRASE[d.key] ?? d.label);
+  const top = meaningfulDrivers.slice(0, 2).map((d) => DRIVER_SUMMARY_PHRASE[d.key] ?? d.label);
   const causeClause = top.length > 1 ? `${top[0]} and ${top[1]}` : top[0];
   const renewalClause = days >= 0 && days <= 60 ? ` ahead of a renewal in ${days} days` : "";
   return `${account.company}'s risk is primarily driven by ${causeClause}${renewalClause}.`;
