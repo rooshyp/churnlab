@@ -1,0 +1,11 @@
+account_number,customer_name,annual_contract_value,next_renewal,vertical,employee_count,plan,weekly_active,seats,active,nps_score,open_ticket_count,critical_tickets,billing_status,csm
+CL-9001,Harborlight Media,148000,2027-01-15,Media & Entertainment,340,Growth,61,80,64,42,1,0,Current,Dana Ruiz
+CL-9002,Fernbank Analytics,92000,2026-09-30,SaaS & Software,210,Growth,18,60,22,-8,5,2,Late,Dana Ruiz
+CL-9003,,54000,2026-10-12,Retail & E-commerce,150,Starter,,40,,,0,0,Current,Marcus Lee
+CL-9004,Overlook Financial,-12000,2026-11-01,Financial Services,500,Enterprise,120,150,110,55,0,0,Current,Marcus Lee
+CL-9005,Pinecrest Logistics,61000,not-a-real-date,Logistics,180,Growth,44,70,49,31,2,1,Current,Dana Ruiz
+CL-9006,Quarryview Health,175000,2026-08-20,Healthcare,620,Enterprise,205,220,260,19,4,2,Late,Marcus Lee
+CL-9006,Quarryview Health Duplicate,175000,2026-08-20,Healthcare,620,Enterprise,205,220,190,19,4,2,Late,Marcus Lee
+CL-9007,Stonebridge Education,38000,2027-03-05,Education,95,Starter,29,35,31,48,0,0,Current,Dana Ruiz
+CL-9008,Kestrel Nonprofit Alliance,21000,2026-09-18,Nonprofit,60,Starter,not-a-number,25,19,,1,0,Current,Marcus Lee
+CL-9009,Anchor Manufacturing,133000,2027-02-01,Manufacturing,410,Growth,88,110,95,37,3,0,Current,Dana Ruiz
