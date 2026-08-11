@@ -185,7 +185,7 @@ export default function DashboardPage() {
                     </p>
                   </div>
                   <div className="flex shrink-0 items-center gap-3">
-                    <span className="text-sm font-medium text-slate-900">{formatCurrency(v.account.arr, { compact: true })}</span>
+                    <span className="text-sm font-medium text-slate-900">{formatCurrency(v.priority.arrExposed, { compact: true })}</span>
                     <RiskBadge risk={v.health.risk} />
                     <PriorityBadge tier={v.priority.tier} />
                   </div>
