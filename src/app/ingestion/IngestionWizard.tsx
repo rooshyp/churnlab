@@ -81,7 +81,7 @@ export function IngestionWizard() {
               <div>
                 <h3 className="text-sm font-semibold text-slate-700">Upload a customer/account CSV</h3>
                 <p className="mx-auto mt-1 max-w-md text-sm text-slate-500">
-                  Any export works — column names don&apos;t need to match ChurnLab&apos;s schema. You&apos;ll map columns on the next step.
+                  Any export works. Column names don&apos;t need to match ChurnLab&apos;s schema. You&apos;ll map columns on the next step.
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -105,7 +105,7 @@ export function IngestionWizard() {
             <div>
               <CardTitle>Map columns</CardTitle>
               <CardDescription>
-                {fileName} · {csv.rows.length} rows · {csv.headers.length} columns. Confidently-matched fields are pre-filled — review and adjust as needed.
+                {fileName} · {csv.rows.length} rows · {csv.headers.length} columns. Confidently-matched fields are pre-filled; review and adjust as needed.
               </CardDescription>
             </div>
           </CardHeader>
@@ -190,7 +190,7 @@ export function IngestionWizard() {
             </CardHeader>
             <CardBody className="p-0">
               {validation.issues.length === 0 ? (
-                <p className="p-5 text-sm text-slate-500">No issues found — this file is clean.</p>
+                <p className="p-5 text-sm text-slate-500">No issues found. This file is clean.</p>
               ) : (
                 <ul className="max-h-72 divide-y divide-slate-100 overflow-y-auto">
                   {validation.issues.map((issue) => (

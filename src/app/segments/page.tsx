@@ -27,7 +27,7 @@ export default function SegmentsPage() {
           <CardHeader>
             <div>
               <CardTitle>Findings</CardTitle>
-              <CardDescription>Generated from the current dataset — each finding is only shown when the underlying comparison clears a minimum threshold.</CardDescription>
+              <CardDescription>Generated from the current dataset. Each finding is only shown when the underlying comparison clears a minimum threshold.</CardDescription>
             </div>
           </CardHeader>
           <CardBody>

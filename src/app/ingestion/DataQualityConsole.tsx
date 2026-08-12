@@ -25,7 +25,7 @@ export function DataQualityConsole({ report, totalAccounts }: { report: QualityR
           <CardTitle>Live Portfolio Data Quality</CardTitle>
           <CardDescription>
             {report.accountsWithIssues} of {totalAccounts} active accounts have at least one data-quality issue. These are surfaced, not
-            silently accepted — they still flow into scoring, with confidence reduced accordingly.
+            silently accepted. They still flow into scoring, with confidence reduced accordingly.
           </CardDescription>
         </div>
         <Select value={severityFilter} onChange={(e) => setSeverityFilter(e.target.value)}>

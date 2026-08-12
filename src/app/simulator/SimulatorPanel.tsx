@@ -79,7 +79,7 @@ export function SimulatorPanel({ views }: { views: SimAccountView[] }) {
           <CardHeader>
             <div>
               <CardTitle>Scenario: Retain the N highest-value at-risk accounts</CardTitle>
-              <CardDescription>Deterministic — sums ARR for the top N accounts by ARR among Medium and High risk, contingent on all N being saved.</CardDescription>
+              <CardDescription>Deterministic: sums ARR for the top N accounts by ARR among Medium and High risk, contingent on all N being saved.</CardDescription>
             </div>
           </CardHeader>
           <CardBody>
@@ -148,7 +148,7 @@ export function SimulatorPanel({ views }: { views: SimAccountView[] }) {
 
       <p className="text-xs text-slate-400">
         Baseline risk-weighted Revenue at Risk today: {formatCurrency(baselineRevenueAtRisk, { compact: true })}. All figures above are modeled
-        scenario estimates based on documented assumptions (see docs/METRICS.md) — not observed outcomes or guarantees.
+        scenario estimates based on documented assumptions (see docs/METRICS.md), not observed outcomes or guarantees.
       </p>
     </div>
   );

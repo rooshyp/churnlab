@@ -43,7 +43,7 @@ export default function CommandCenterPage() {
     <div>
       <PageHeader
         title="Retention Command Center"
-        description="Every active account, ranked by economic priority — not risk alone — so the highest-stakes work surfaces first."
+        description="Every active account, ranked by economic priority, not risk alone, so the highest-stakes work surfaces first."
       />
       <Card>
         <CardBody>

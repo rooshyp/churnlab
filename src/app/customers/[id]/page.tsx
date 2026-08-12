@@ -74,7 +74,7 @@ export default async function CustomerDetailPage({ params }: { params: Promise<{
             <CardHeader>
               <div>
                 <CardTitle>Churn Investigator</CardTitle>
-                <CardDescription>Why {account.company} is classified the way it is — built directly from account data.</CardDescription>
+                <CardDescription>Why {account.company} is classified the way it is, built directly from account data.</CardDescription>
               </div>
             </CardHeader>
             <CardBody>
@@ -137,7 +137,7 @@ export default async function CustomerDetailPage({ params }: { params: Promise<{
             </CardHeader>
             <CardBody>
               {health.drivers.length === 0 ? (
-                <p className="text-sm text-slate-500">No material deductions — this account is healthy.</p>
+                <p className="text-sm text-slate-500">No material deductions. This account is healthy.</p>
               ) : (
                 health.drivers.map((d) => <DriverBar key={d.key} driverKey={d.key} label={d.label} deduction={d.deduction} />)
               )}
